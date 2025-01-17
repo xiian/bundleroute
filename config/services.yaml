@@ -1,0 +1,20 @@
+services:
+  Xiian\BundleRoute\:
+    resource: '../src'
+    autowire: true
+    autoconfigure: true
+
+  Xiian\BundleRoute\Twig\BundleRouteExtension:
+    tags: [ 'twig.extension' ]
+    autowire: true
+    autoconfigure: true
+
+  Xiian\BundleRoute\Twig\TwigNamespaceMapper:
+    constructor: 'createFromKernel'
+    autowire: true
+    autoconfigure: true
+
+  Xiian\BundleRoute\Routing\RoutesByNamespace:
+    constructor: 'createFromRouter'
+    autowire: true
+    autoconfigure: true
